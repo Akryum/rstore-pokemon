@@ -12,7 +12,6 @@ const editOpen = ref(false)
   >
     <img :key="pokemon.sprite" :src="pokemon.sprite" :alt="pokemon.name" class="size-20 sm:size-42">
     <span class="flex-1 truncate text-lg sm:text-2xl">{{ pokemon.name }}</span>
-    <span class="w-full break-all">{{ pokemon.sprite }}</span>
 
     <!-- Actions -->
     <div class="flex itmes-center gap-4">
