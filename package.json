@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.0.0",
+    "@iconify-json/lucide": "^1.2.71",
     "@libsql/client": "^0.14.0",
     "@nuxt/eslint": "1.9.0",
     "@nuxt/ui": "4.1.0",

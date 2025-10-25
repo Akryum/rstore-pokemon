@@ -30,4 +30,10 @@ export default defineNuxtConfig({
     ws: true,
     offline: true,
   },
+
+  icon: {
+    clientBundle: {
+      scan: true,
+    },
+  },
 })

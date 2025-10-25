@@ -16,13 +16,17 @@ createPokemon.$onSuccess(() => {
 })
 
 const editOpen = ref(false)
+
+const syncAgo = useTimeAgo(() => store.$syncState.lastSyncAt ?? new Date())
+
+const online = useOnline()
 </script>
 
 <template>
   <UApp>
     <NuxtRouteAnnouncer />
 
-    <div class="p-4">
+    <div class="p-4 flex items-center gap-4">
       <UModal v-model:open="createOpen" title="Add Pokémon">
         <UButton icon="lucide:plus">
           Add Pokémon
@@ -54,6 +58,18 @@ const editOpen = ref(false)
           </UForm>
         </template>
       </UModal>
+
+      <ClientOnly>
+        <div v-if="store.$syncState.lastSyncAt" class="text-dimmed flex items-center gap-1">
+          <UIcon name="lucide:refresh-ccw" />
+          Last synced {{ syncAgo }}
+        </div>
+
+        <div v-if="!online" class="text-dimmed flex items-center gap-1">
+          <UIcon name="lucide:cloud-off" />
+          Offline
+        </div>
+      </ClientOnly>
     </div>
 
     <div class="sm:grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
