@@ -1,36 +1,41 @@
 <script lang="ts" setup>
-import type { CommandPaletteItem } from '@nuxt/ui'
+import type { CommandPaletteGroup, CommandPaletteItem } from '@nuxt/ui'
 
 const props = defineProps<{
   selectedId?: number
 }>()
 
 const emit = defineEmits<{
-  select: [item: any]
+  select: [item: PokemonData]
 }>()
 
-const search = ref('')
+type PokemonData = Pick<StoreResolvedCollectionItem<'pokemons'>, 'pokemonId' | 'name' | 'sprite'>
 
-const debouncedSearch = useDebounce(search, 300)
+const savedPokemons = useLocalStorage<PokemonData[]>('pokemons', [])
 
-const { data, status } = useFetch<any>('https://graphql.pokeapi.co/v1beta2', {
-  method: 'POST',
-  body: computed(() => ({
-    query: `query ($search: String!) {
-  pokemons: pokemon_aggregate(where: {name: {_iregex: $search}}, limit: 10) {
-    nodes {
-      id
-      name
-      pokemonsprites {
-        sprites
-      }
-    }
+onMounted(async () => {
+  if (savedPokemons.value.length === 0) {
+    savedPokemons.value = (await $fetch('https://graphql.pokeapi.co/v1beta2', {
+      method: 'POST',
+      body: {
+        query: `query {
+          pokemons: pokemon_aggregate {
+            nodes {
+              id
+              name
+              pokemonsprites {
+                sprites
+              }
+            }
+          }
+        }`,
+      },
+    }) as any).data.pokemons.nodes.map((pokemon: any) => ({
+      pokemonId: pokemon.id,
+      name: pokemon.name,
+      sprite: getSprite(pokemon),
+    } as PokemonData))
   }
-}`,
-    variables: {
-      search: debouncedSearch.value,
-    },
-  })),
 })
 
 function getSprite(pokemon: any) {
@@ -38,15 +43,11 @@ function getSprite(pokemon: any) {
 }
 
 const items = computed(() => {
-  return data.value?.data?.pokemons.nodes.map((pokemon: any) => ({
+  return savedPokemons.value.map(pokemon => ({
     label: pokemon.name,
-    avatar: { src: getSprite(pokemon) },
-    active: props.selectedId === pokemon.id,
-    onSelect: () => emit('select', {
-      pokemonId: pokemon.id,
-      name: pokemon.name,
-      sprite: getSprite(pokemon),
-    }),
+    avatar: { src: pokemon.sprite },
+    active: props.selectedId === pokemon.pokemonId,
+    onSelect: () => emit('select', pokemon),
   } satisfies CommandPaletteItem)) || []
 })
 
@@ -55,15 +56,13 @@ const groups = computed(() => [
     id: 'pokemons',
     label: 'Pokémons',
     items: items.value,
-  },
+  } satisfies CommandPaletteGroup,
 ])
 </script>
 
 <template>
   <UCommandPalette
-    v-model:search-term="search"
     :model-value="selectedId"
-    :loading="status === 'pending'"
     :groups
     class="flex-1 h-40"
   />
