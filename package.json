@@ -18,6 +18,7 @@
     "@nuxt/eslint": "1.9.0",
     "@nuxt/ui": "4.1.0",
     "@rstore/nuxt-drizzle": "^0.8.0",
+    "@vite-pwa/nuxt": "1.0.7",
     "@vueuse/core": "^14.0.0",
     "@vueuse/nuxt": "^14.0.0",
     "drizzle-kit": "^0.30.5",

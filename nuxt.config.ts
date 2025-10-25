@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/nuxt',
     '@rstore/nuxt-drizzle',
+    '@vite-pwa/nuxt',
   ],
 
   runtimeConfig: {
@@ -38,5 +39,9 @@ export default defineNuxtConfig({
     clientBundle: {
       scan: true,
     },
+  },
+
+  pwa: {
+    registerType: 'autoUpdate',
   },
 })
