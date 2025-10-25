@@ -72,7 +72,7 @@ const online = useOnline()
       </ClientOnly>
     </div>
 
-    <div class="sm:grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+    <div class="sm:grid grid-cols-[repeat(auto-fit,300px)]">
       <div
         v-for="pokemon of pokemons.toReversed()"
         :key="pokemon.id"
