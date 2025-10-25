@@ -43,5 +43,9 @@ export default defineNuxtConfig({
 
   pwa: {
     registerType: 'autoUpdate',
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      maximumFileSizeToCacheInBytes: 5000000,
+    },
   },
 })
