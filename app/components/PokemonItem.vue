@@ -8,7 +8,7 @@ const editOpen = ref(false)
 
 <template>
   <div
-    class="p-4 flex items-center gap-4 hover:bg-elevated/50 sm:flex-col sm:rounded-md"
+    class="p-2 sm:p-4 flex items-center gap-2 sm:gap-4 hover:bg-elevated/50 sm:flex-col sm:rounded-md"
   >
     <img :key="pokemon.sprite" :src="pokemon.sprite" :alt="pokemon.name" class="size-20 sm:size-42">
     <span class="flex-1 truncate text-lg sm:text-2xl">{{ pokemon.name }}</span>
@@ -21,7 +21,7 @@ const editOpen = ref(false)
           variant="ghost"
           color="neutral"
         >
-          Change
+          <span class="max-sm:hidden">Change</span>
         </UButton>
 
         <template #body>
@@ -50,7 +50,7 @@ const editOpen = ref(false)
         icon="lucide:trash"
         @click="pokemon.$delete()"
       >
-        Delete
+        <span class="max-sm:hidden">Delete</span>
       </UButton>
     </div>
   </div>

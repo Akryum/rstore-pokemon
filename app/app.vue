@@ -24,10 +24,13 @@ const online = useOnline()
   <UApp>
     <NuxtRouteAnnouncer />
 
-    <div class="p-4 flex items-center gap-4">
+    <div class="p-4 flex sm:items-center gap-2 sm:gap-4 max-sm:flex-col">
       <UModal v-model:open="createOpen" title="Add Pokémon">
-        <UButton icon="lucide:plus">
-          Add Pokémon
+        <UButton
+          icon="lucide:plus"
+          class="max-sm:fixed bottom-6 right-6 max-sm:size-14 max-sm:justify-center max-sm:rounded-xl"
+        >
+          <span class="max-sm:hidden">Add Pokémon</span>
         </UButton>
 
         <template #body>
@@ -77,5 +80,7 @@ const online = useOnline()
         :pokemon
       />
     </div>
+
+    <div class="h-42" />
   </UApp>
 </template>
