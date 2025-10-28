@@ -4,6 +4,8 @@ const { pokemon } = defineProps<{
 }>()
 
 const editOpen = ref(false)
+
+const ago = useTimeAgo(() => pokemon.updatedAt)
 </script>
 
 <template>
@@ -11,7 +13,15 @@ const editOpen = ref(false)
     class="p-2 sm:p-4 flex items-center gap-2 sm:gap-4 hover:bg-elevated/50 sm:flex-col sm:rounded-md"
   >
     <img :key="pokemon.sprite" :src="pokemon.sprite" :alt="pokemon.name" class="size-20 sm:size-42">
-    <span class="flex-1 truncate text-lg sm:text-2xl">{{ pokemon.name }}</span>
+
+    <div class="flex-1 min-w-0 flex flex-col items-stretch sm:text-center">
+      <div class="truncate text-lg sm:text-2xl">
+        {{ pokemon.name }}
+      </div>
+      <div class="opacity-30 text-sm">
+        Updated {{ ago }}
+      </div>
+    </div>
 
     <!-- Actions -->
     <div class="flex itmes-center gap-4">
