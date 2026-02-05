@@ -7,8 +7,15 @@ const store = useStore()
 
 const search = ref('')
 
+function escapeLikeValue(value: string) {
+  return value
+    .replace(/\\/g, '\\\\')
+    .replace(/%/g, '\\%')
+    .replace(/_/g, '\\_')
+}
+
 const { data: pokemons } = await store.pokemons.liveQuery(q => q.many({
-  where: search.value ? like('name', `%${search.value}%`) : undefined,
+  where: search.value ? like('name', `%${escapeLikeValue(search.value)}%`) : undefined,
   params: {
     orderBy: [
       'createdAt.desc',
