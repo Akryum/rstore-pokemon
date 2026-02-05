@@ -24,8 +24,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0(@babel/parser@7.28.5)(change-case@5.4.4)(db0@0.3.4(@libsql/client@0.14.0)(drizzle-orm@0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1)))(embla-carousel@8.6.0)(ioredis@5.8.2)(magicast@0.3.5)(typescript@5.9.3)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-router@4.6.3(vue@3.5.22(typescript@5.9.3)))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)
       '@rstore/nuxt-drizzle':
-        specifier: ^0.8.0
-        version: 0.8.0(drizzle-orm@0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1))(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+        specifier: https://pkg.pr.new/directus/rstore/@rstore/nuxt-drizzle@f37b8a7
+        version: https://pkg.pr.new/directus/rstore/@rstore/nuxt-drizzle@f37b8a7(drizzle-orm@0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1))(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
       '@vite-pwa/nuxt':
         specifier: 1.0.7
         version: 1.0.7(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(workbox-build@7.3.0)(workbox-window@7.3.0)
@@ -2115,25 +2115,31 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rstore/core@0.8.0':
-    resolution: {integrity: sha512-LyoZcLgxooK7THDuGJw4J1yhan4WTUUPQ3kHgn2s/yrgYOjx0b9BSaaKGV4H+51q6K2UDjisREGgagY1eZpkvQ==}
+  '@rstore/core@https://pkg.pr.new/directus/rstore/@rstore/core@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/core@f37b8a7ae17fc31085a77b03167e75d78b6e9b90}
+    version: 0.8.2
 
-  '@rstore/nuxt-drizzle@0.8.0':
-    resolution: {integrity: sha512-vK+8e8ym6tJX2uZDK/KA3d6BND0GBMJztQVZTn3dmrySbY9ZPQ4gz22oNhbJnGmVQGDD/mQV717/tOWCyyYNPw==}
+  '@rstore/nuxt-drizzle@https://pkg.pr.new/directus/rstore/@rstore/nuxt-drizzle@f37b8a7':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/nuxt-drizzle@f37b8a7}
+    version: 0.8.2
     peerDependencies:
       drizzle-orm: '*'
 
-  '@rstore/nuxt@0.8.0':
-    resolution: {integrity: sha512-UqIPhOzrRd6lbNOoJo487aIme5P2A+OoiuviElpps8rzQv9zC4VC9l3bPv0pTtHkSHQbIVbUl3ahADLiebJl6A==}
+  '@rstore/nuxt@https://pkg.pr.new/directus/rstore/@rstore/nuxt@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/nuxt@f37b8a7ae17fc31085a77b03167e75d78b6e9b90}
+    version: 0.8.2
 
-  '@rstore/offline@0.8.0':
-    resolution: {integrity: sha512-E0iWedF+IR/292s5BB6AhRjAH2m6U2MAQNScvo1UK0HN8DJcy7ECNguov3kKinsjGSCz0yNfrRv86vwSSphFVQ==}
+  '@rstore/offline@https://pkg.pr.new/directus/rstore/@rstore/offline@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/offline@f37b8a7ae17fc31085a77b03167e75d78b6e9b90}
+    version: 0.8.2
 
-  '@rstore/shared@0.8.0':
-    resolution: {integrity: sha512-oPZeZqrh+laoDI4wCc+U6IZwLaepqmuXNCj3dcCH+fmMaU4ToDfnr52xxas4Nj+cYVUZ2n7nmocpyoXZhSVaKw==}
+  '@rstore/shared@https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90}
+    version: 0.8.2
 
-  '@rstore/vue@0.8.0':
-    resolution: {integrity: sha512-mmv9Wy2fgT4dxpNKGVXJE+QOnx6E7rSiInBgjXEQExwLSSes+BpjF6lrl+RBNkkOVCAMazElX23QWz8+IyrLmA==}
+  '@rstore/vue@https://pkg.pr.new/directus/rstore/@rstore/vue@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
+    resolution: {tarball: https://pkg.pr.new/directus/rstore/@rstore/vue@f37b8a7ae17fc31085a77b03167e75d78b6e9b90}
+    version: 0.8.2
     peerDependencies:
       vue: ^3.5.21
 
@@ -3845,6 +3851,10 @@ packages:
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
+  fast-equals@5.4.0:
+    resolution: {integrity: sha512-jt2DW/aNFNwke7AUd+Z+e6pz39KO5rzdbbFCg2sGafS4mk13MI7Z8O5z9cADNn5lhGODIgLwug6TZO2ctf7kcw==}
+    engines: {node: '>=6.0.0'}
+
   fast-fifo@1.3.2:
     resolution: {integrity: sha512-/d9sfos4yxzpwkDkuN7k2SqFKtYNmCTzgfEpz82x34IM9/zc8KGxQoXg1liNC/izpRM/MBdt44Nmx41ZWqk+FQ==}
 
@@ -4062,7 +4072,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -8879,17 +8889,17 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.5':
     optional: true
 
-  '@rstore/core@0.8.0':
+  '@rstore/core@https://pkg.pr.new/directus/rstore/@rstore/core@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
     dependencies:
-      '@rstore/shared': 0.8.0
+      '@rstore/shared': https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
 
-  '@rstore/nuxt-drizzle@0.8.0(drizzle-orm@0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1))(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))':
+  '@rstore/nuxt-drizzle@https://pkg.pr.new/directus/rstore/@rstore/nuxt-drizzle@f37b8a7(drizzle-orm@0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1))(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))':
     dependencies:
       '@nuxt/kit': 4.1.3(magicast@0.3.5)
-      '@rstore/nuxt': 0.8.0(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
-      '@rstore/offline': 0.8.0
-      '@rstore/shared': 0.8.0
-      '@rstore/vue': 0.8.0(vue@3.5.22(typescript@5.9.3))
+      '@rstore/nuxt': https://pkg.pr.new/directus/rstore/@rstore/nuxt@f37b8a7ae17fc31085a77b03167e75d78b6e9b90(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+      '@rstore/offline': https://pkg.pr.new/directus/rstore/@rstore/offline@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
+      '@rstore/shared': https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
+      '@rstore/vue': https://pkg.pr.new/directus/rstore/@rstore/vue@f37b8a7ae17fc31085a77b03167e75d78b6e9b90(vue@3.5.22(typescript@5.9.3))
       '@vueuse/core': 14.0.0(vue@3.5.22(typescript@5.9.3))
       drizzle-orm: 0.40.1(@libsql/client@0.14.0)(@opentelemetry/api@1.9.0)(gel@2.1.1)
       h3: 1.15.4
@@ -8901,33 +8911,35 @@ snapshots:
       - vite
       - vue
 
-  '@rstore/nuxt@0.8.0(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))':
+  '@rstore/nuxt@https://pkg.pr.new/directus/rstore/@rstore/nuxt@f37b8a7ae17fc31085a77b03167e75d78b6e9b90(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))':
     dependencies:
       '@nuxt/devtools-kit': 2.6.5(magicast@0.3.5)(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))
       '@nuxt/kit': 4.1.3(magicast@0.3.5)
-      '@rstore/shared': 0.8.0
-      '@rstore/vue': 0.8.0(vue@3.5.22(typescript@5.9.3))
+      '@rstore/shared': https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
+      '@rstore/vue': https://pkg.pr.new/directus/rstore/@rstore/vue@f37b8a7ae17fc31085a77b03167e75d78b6e9b90(vue@3.5.22(typescript@5.9.3))
       sirv: 3.0.2
     transitivePeerDependencies:
       - magicast
       - vite
       - vue
 
-  '@rstore/offline@0.8.0':
+  '@rstore/offline@https://pkg.pr.new/directus/rstore/@rstore/offline@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
     dependencies:
-      '@rstore/core': 0.8.0
-      '@rstore/shared': 0.8.0
+      '@rstore/core': https://pkg.pr.new/directus/rstore/@rstore/core@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
+      '@rstore/shared': https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
 
-  '@rstore/shared@0.8.0':
+  '@rstore/shared@https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90':
     dependencies:
       '@standard-schema/spec': 1.0.0
       klona: 2.0.6
 
-  '@rstore/vue@0.8.0(vue@3.5.22(typescript@5.9.3))':
+  '@rstore/vue@https://pkg.pr.new/directus/rstore/@rstore/vue@f37b8a7ae17fc31085a77b03167e75d78b6e9b90(vue@3.5.22(typescript@5.9.3))':
     dependencies:
-      '@rstore/core': 0.8.0
-      '@rstore/shared': 0.8.0
+      '@rstore/core': https://pkg.pr.new/directus/rstore/@rstore/core@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
+      '@rstore/shared': https://pkg.pr.new/directus/rstore/@rstore/shared@f37b8a7ae17fc31085a77b03167e75d78b6e9b90
       '@vueuse/core': 14.0.0(vue@3.5.22(typescript@5.9.3))
+      fast-equals: 5.4.0
+      klona: 2.0.6
       vue: 3.5.22(typescript@5.9.3)
 
   '@sec-ant/readable-stream@0.4.1': {}
@@ -10796,6 +10808,8 @@ snapshots:
   exsolve@1.0.7: {}
 
   fast-deep-equal@3.1.3: {}
+
+  fast-equals@5.4.0: {}
 
   fast-fifo@1.3.2: {}
 
