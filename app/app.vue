@@ -36,7 +36,12 @@ const online = useOnline()
 
     <div class="flex flex-col gap-4 sm:p-4">
       <div class="flex sm:items-center gap-2 sm:gap-4 max-sm:flex-col max-sm:p-4">
-        <UModal v-model:open="createOpen" title="Add Pokémon">
+        <UModal
+          v-model:open="createOpen" title="Add Pokémon"
+          :ui="{
+            body: 'p-0!',
+          }"
+        >
           <UButton
             icon="lucide:plus"
             class="max-sm:fixed bottom-6 right-6 max-sm:size-14 max-sm:justify-center max-sm:rounded-xl"
@@ -51,7 +56,7 @@ const online = useOnline()
                 @select="Object.assign(createPokemon, $event)"
               />
 
-              <div class="flex items-center justify-end gap-4">
+              <div class="flex items-center justify-end gap-4 p-4">
                 <UButton
                   color="neutral"
                   variant="subtle"

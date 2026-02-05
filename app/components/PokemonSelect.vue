@@ -54,7 +54,7 @@ const items = computed(() => {
 const groups = computed(() => [
   {
     id: 'pokemons',
-    label: 'Pokémons',
+    // label: 'Pokémons',
     items: items.value,
   } satisfies CommandPaletteGroup,
 ])

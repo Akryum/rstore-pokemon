@@ -25,7 +25,12 @@ const ago = useTimeAgo(() => pokemon.updatedAt)
 
     <!-- Actions -->
     <div class="flex itmes-center gap-4">
-      <UModal v-model:open="editOpen" title="Change Pokémon">
+      <UModal
+        v-model:open="editOpen" title="Change Pokémon"
+        :ui="{
+          body: 'p-0!',
+        }"
+      >
         <UButton
           icon="lucide:pen"
           variant="ghost"
@@ -41,7 +46,7 @@ const ago = useTimeAgo(() => pokemon.updatedAt)
               @select="pokemon.$update($event); editOpen = false"
             />
 
-            <div class="flex items-center justify-end gap-4">
+            <div class="flex items-center justify-end gap-4 p-4">
               <UButton
                 color="neutral"
                 variant="subtle"
