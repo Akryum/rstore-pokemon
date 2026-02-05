@@ -5,7 +5,10 @@ useHead({
 
 const store = useStore()
 
+const search = ref('')
+
 const { data: pokemons } = await store.pokemons.liveQuery(q => q.many({
+  where: search.value ? like('name', `%${search.value}%`) : undefined,
   params: {
     orderBy: [
       'createdAt.desc',
@@ -75,6 +78,13 @@ const online = useOnline()
             </UForm>
           </template>
         </UModal>
+
+        <UInput
+          v-model="search"
+          icon="lucide:search"
+          placeholder="Search Pokémon"
+          class="flex-1 max-w-md"
+        />
 
         <ClientOnly>
           <div v-if="store.$syncState.lastSyncAt" class="text-dimmed flex items-center gap-1">
