@@ -47,7 +47,7 @@ const online = useOnline()
         >
           <UButton
             icon="lucide:plus"
-            class="max-sm:fixed bottom-6 right-6 max-sm:size-14 max-sm:justify-center max-sm:rounded-xl"
+            class="max-sm:fixed bottom-6 right-6 max-sm:size-14 max-sm:justify-center max-sm:rounded-xl max-sm:z-1"
           >
             <span class="max-sm:hidden">Add Pokémon</span>
           </UButton>
