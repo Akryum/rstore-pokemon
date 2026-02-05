@@ -9,41 +9,10 @@ const emit = defineEmits<{
   select: [item: PokemonData]
 }>()
 
-type PokemonData = Pick<StoreResolvedCollectionItem<'pokemons'>, 'pokemonId' | 'name' | 'sprite'>
-
-const savedPokemons = useLocalStorage<PokemonData[]>('pokemons', [])
-
-onMounted(async () => {
-  if (savedPokemons.value.length === 0) {
-    savedPokemons.value = (await $fetch('https://graphql.pokeapi.co/v1beta2', {
-      method: 'POST',
-      body: {
-        query: `query {
-          pokemons: pokemon_aggregate {
-            nodes {
-              id
-              name
-              pokemonsprites {
-                sprites
-              }
-            }
-          }
-        }`,
-      },
-    }) as any).data.pokemons.nodes.map((pokemon: any) => ({
-      pokemonId: pokemon.id,
-      name: pokemon.name,
-      sprite: getSprite(pokemon),
-    } as PokemonData))
-  }
-})
-
-function getSprite(pokemon: any) {
-  return pokemon.pokemonsprites[0]?.sprites?.front_default ?? ''
-}
+const { pokemons } = await usePokemons()
 
 const items = computed(() => {
-  return savedPokemons.value.map(pokemon => ({
+  return pokemons.value.map(pokemon => ({
     label: pokemon.name,
     avatar: { src: pokemon.sprite },
     active: props.selectedId === pokemon.pokemonId,

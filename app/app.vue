@@ -52,12 +52,19 @@ const online = useOnline()
             body: 'p-0!',
           }"
         >
-          <UButton
-            icon="lucide:plus"
-            class="max-sm:fixed bottom-6 right-6 max-sm:size-14 max-sm:justify-center max-sm:rounded-xl max-sm:z-1"
-          >
-            <span class="max-sm:hidden">Add Pokémon</span>
-          </UButton>
+          <UFieldGroup class="max-sm:fixed max-sm:bottom-6 max-sm:right-6 max-sm:z-1">
+            <UButton
+              icon="lucide:plus"
+              class="max-sm:size-14 max-sm:justify-center max-sm:rounded-xl"
+            >
+              <span class="max-sm:hidden">Add Pokémon</span>
+            </UButton>
+
+            <AddRandomPokemonButton
+              class="max-sm:size-14 max-sm:justify-center max-sm:rounded-xl"
+              @click.stop
+            />
+          </UFieldGroup>
 
           <template #body>
             <UForm :state="createPokemon" class="flex flex-col gap-4 h-100" @submit="createPokemon.$submit()">
