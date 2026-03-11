@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/eslint',
     '@vueuse/nuxt',
+    '@tresjs/nuxt',
     '@rstore/nuxt-drizzle',
     '@vite-pwa/nuxt',
   ],

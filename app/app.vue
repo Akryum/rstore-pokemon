@@ -44,8 +44,8 @@ const online = useOnline()
   <UApp>
     <NuxtRouteAnnouncer />
 
-    <div class="flex flex-col gap-4 sm:p-4">
-      <div class="flex sm:items-center gap-2 sm:gap-4 max-sm:flex-col max-sm:p-4">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-3 py-3 sm:px-4 sm:py-4">
+      <div class="flex sm:items-center gap-2 sm:gap-4 max-sm:flex-col">
         <UModal
           v-model:open="createOpen" title="Add Pokémon"
           :ui="{
@@ -113,7 +113,9 @@ const online = useOnline()
         </ClientOnly>
       </div>
 
-      <div class="sm:grid grid-cols-[repeat(auto-fit,300px)]">
+      <PokemonIslandScene :pokemons />
+
+      <div class="grid gap-3 sm:grid-cols-[repeat(auto-fit,300px)] sm:gap-4">
         <PokemonItem
           v-for="pokemon of pokemons"
           :key="pokemon.id"
