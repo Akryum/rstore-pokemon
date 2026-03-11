@@ -3,9 +3,12 @@ import { ACESFilmicToneMapping } from 'three'
 
 type ScenePokemon = Pick<StoreResolvedCollectionItem<'pokemons'>, 'id' | 'pokemonId' | 'name' | 'sprite'>
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   pokemons: ScenePokemon[]
-}>()
+  maxPokemons3d?: number
+}>(), {
+  maxPokemons3d: 24,
+})
 
 const trees = [
   {
@@ -45,6 +48,10 @@ const rocks = [
     color: '#8f9aa5',
   },
 ] as const
+
+const visiblePokemons = computed(() => {
+  return props.pokemons.slice(0, props.maxPokemons3d)
+})
 
 const countLabel = computed(() => {
   const count = props.pokemons.length
@@ -214,7 +221,7 @@ const prefersReducedMotion = usePreferredReducedMotion()
 
       <!-- One animated billboard sprite instance per Pokemon. -->
       <PokemonIslandSprite
-        v-for="(pokemon, index) in pokemons"
+        v-for="(pokemon, index) in visiblePokemons"
         :key="pokemon.id"
         :pokemon="pokemon"
         :index="index"
