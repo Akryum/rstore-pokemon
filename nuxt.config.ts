@@ -1,6 +1,9 @@
+import process from 'node:process'
 import { createResolver } from 'nuxt/kit'
 
 const { resolve } = createResolver(import.meta.url)
+
+const dbFile = process.env.DB_FILE ?? '.db.sqlite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -18,7 +21,7 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
-    dbUrl: `file:${resolve('.db.sqlite')}`,
+    dbUrl: `file:${resolve(dbFile)}`,
   },
 
   css: [
