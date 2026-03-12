@@ -52,4 +52,17 @@ export default defineNuxtConfig({
       maximumFileSizeToCacheInBytes: 5000000,
     },
   },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        'three',
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        '@rstore/offline',
+        '@tresjs/cientos',
+        '@tresjs/core',
+      ],
+    },
+  },
 })
