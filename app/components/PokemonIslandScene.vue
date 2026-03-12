@@ -228,12 +228,5 @@ const prefersReducedMotion = usePreferredReducedMotion()
         :paused="prefersReducedMotion === 'reduce'"
       />
     </TresCanvas>
-
-    <div
-      v-if="pokemons.length === 0"
-      class="absolute right-4 bottom-4 z-50 max-w-[calc(100%-2rem)] rounded-2xl border border-white/45 bg-slate-900/45 px-4 py-3 text-[0.88rem] text-white backdrop-blur-[10px] sm:text-base"
-    >
-      Add a Pokemon and it will start roaming the island.
-    </div>
   </section>
 </template>

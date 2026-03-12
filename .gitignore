@@ -25,3 +25,6 @@ logs
 
 .db.sqlite
 ecosystem.config.cjs
+
+# Agent skills from npm packages (managed by skills-npm)
+**/skills/npm-*

@@ -26,6 +26,16 @@ function onImageError() {
   imageError.value = true
 }
 
+async function updatePokemon(newPokemon: Pick<StoreResolvedCollectionItem<'pokemons'>, 'pokemonId' | 'name' | 'sprite'>) {
+  await pokemon.$update(newPokemon)
+
+  editOpen.value = false
+}
+
+async function deletePokemon() {
+  await pokemon.$delete()
+}
+
 const ago = useTimeAgo(() => pokemon.updatedAt)
 </script>
 
@@ -82,7 +92,7 @@ const ago = useTimeAgo(() => pokemon.updatedAt)
           <div class="flex flex-col gap-4 h-100">
             <PokemonSelect
               :selected-id="pokemon.pokemonId"
-              @select="pokemon.$update($event); editOpen = false"
+              @select="updatePokemon"
             />
 
             <div class="flex items-center justify-end gap-4 p-4">
@@ -102,7 +112,7 @@ const ago = useTimeAgo(() => pokemon.updatedAt)
         color="error"
         variant="ghost"
         icon="lucide:trash"
-        @click="pokemon.$delete()"
+        @click="deletePokemon"
       >
         <span class="max-sm:hidden">Delete</span>
       </UButton>

@@ -31,6 +31,15 @@ const createPokemon = store.pokemons.createForm({
 
 const createOpen = ref(false)
 
+function resetCreatePokemon() {
+  createPokemon.$reset()
+}
+
+watch(createOpen, (open) => {
+  if (open)
+    resetCreatePokemon()
+})
+
 createPokemon.$onSuccess(() => {
   createOpen.value = false
 })
@@ -67,7 +76,11 @@ const online = useOnline()
           </UFieldGroup>
 
           <template #body>
-            <UForm :state="createPokemon" class="flex flex-col gap-4 h-100" @submit="createPokemon.$submit()">
+            <UForm
+              :state="createPokemon"
+              class="flex flex-col gap-4 h-100"
+              @submit.prevent="createPokemon.$submit()"
+            >
               <PokemonSelect
                 :selected-id="createPokemon.pokemonId"
                 @select="Object.assign(createPokemon, $event)"
